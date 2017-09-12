@@ -1,6 +1,6 @@
 ---
 #defaults for atop
 # interval [seconds]
-interval:10
+interval: 10
 #rotation [days]
-rotation:1
+rotation: 1
