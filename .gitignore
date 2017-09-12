@@ -1,0 +1,26 @@
+# Do not include Eclipse config files
+*.project
+*.classpath
+*.settings/
+*target-eclipse/
+
+# Do not include Netbeans config files
+*.ipr
+*.iml
+
+# Do not include IDEA (IntelliJ) config files
+*.idea/
+
+# Do not include git generated merge backups or other crap
+*BASE
+*LOCAL
+*.orig
+
+# Do not include VI style generated backups
+*~
+
+# Do not include mvn versions:set backups
+*pom.xml.versionsBackup
+
+# Do not include the maven target directory
+*target/

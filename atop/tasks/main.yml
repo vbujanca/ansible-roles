@@ -1,0 +1,25 @@
+---
+  - name: install the latest version of Atop from the epel repo
+    yum:
+      name: atop
+      enablerepo: epel
+      state: present
+
+  - name: replace atop defaults
+    replace:
+      path: /etc/sysconfig/atop
+      regexp: 'INTERVAL=\d+$'
+      replace: 'INTERVAL={{ interval }}'
+
+  - name: modify logrotate atop entry
+    replace:
+      path: /etc/logrotate.d/atop
+      regexp: '-mtime\s+\+\d+'
+      replace: '-mtime +{{ rotation }}'
+      backup: no
+
+  - name: Start atop as service
+    service:
+      name: atop
+      enabled: yes
+      state: restarted
